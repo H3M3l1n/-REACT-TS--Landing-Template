@@ -6,13 +6,26 @@
     height: 100%
 
 .hero__content
-    @include mix.flex-center
+    @include mix.flex-center(column)
     width: 60%
 
 .hero__title
     color: white
     font-size: 6rem
     text-transform: uppercase
+
+.hero__button
+    width: 200px
+    height: 50px
+    align-self: flex-start
+    border: none
+    border-radius: 50px 50px
+    font-size: 1rem
+    text-transform: uppercase
+    cursor: pointer
+    &:hover
+        color: white
+        background-color: #576900
 
 .hero__gallery
     @include mix.flex-center
@@ -21,7 +34,6 @@
 .hero__item
     height: 100%
     box-sizing: border-box
-    &--left
     &--right
         margin-top: 250px
 
@@ -42,6 +54,5 @@
     height: 75px
     background-color: #576900
     border-radius: 0 0 10rem 10rem
-    &--left
     &--right
         justify-self: end

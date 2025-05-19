@@ -10,6 +10,7 @@ const SectionHero = () => {
           The Crown
           <br /> of Apple Flavor
         </h1>
+        <button className="hero__button">Order Now</button>
       </div>
       <div className="hero__gallery">
         <div className=".hero__item hero__item--left">
