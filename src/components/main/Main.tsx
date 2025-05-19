@@ -1,12 +1,10 @@
-import MainSection from '../mainsection/MainSection';
+import SectionHero from '../sectionhero/SectionHero';
 import './main.sass';
 
 const Main = () => {
   return (
-    <main id="main">
-      <MainSection className="hero">
-        <h1>SECTION</h1>
-      </MainSection>
+    <main id="main" className='hero'>
+      <SectionHero />
     </main>
   );
 };

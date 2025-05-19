@@ -1,0 +1,48 @@
+@use "../../styles/_mixins" as mix
+
+#hero
+    @include mix.flex-center(row, space-between)
+    width: 100%
+    height: 100%
+    box-sizing: border-box
+
+.hero__content
+    @include mix.flex-center
+    width: 60%
+
+.hero__title
+    color: white
+    font-size: 6rem
+    text-transform: uppercase
+
+.hero__gallery
+    @include mix.flex-center
+    gap: 25px
+
+.hero__item
+    height: 100%
+    box-sizing: border-box
+    &--left
+    &--right
+        margin-top: 250px
+
+.hero__item-image
+    display: block
+    width: 300px
+    border-radius: 250px 250px 0 0
+    object-fit: cover
+    &--left
+        height: 450px
+        margin-left: 100px
+    &--right
+        height: 350px
+        margin-right: 25px
+
+.hero__item-circle
+    width: 150px
+    height: 75px
+    background-color: #576900
+    border-radius: 0 0 10rem 10rem
+    &--left
+    &--right
+        justify-self: end
