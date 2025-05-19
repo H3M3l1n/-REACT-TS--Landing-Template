@@ -3,7 +3,7 @@ import './main.sass';
 
 const Main = () => {
   return (
-    <main id="main" className='hero'>
+    <main id="main" className='main'>
       <SectionHero />
     </main>
   );
