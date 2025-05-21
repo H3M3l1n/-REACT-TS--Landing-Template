@@ -1,0 +1,30 @@
+@use "../../styles/abstracts" as abs
+
+.products
+    @include abs.flex-center
+    @include abs.section-narrow
+
+.products__content
+    display: flex
+    flex-direction: column
+    flex: 1
+    gap: 80px
+
+.products__title
+    color: abs.$secondary-color
+
+.products__text
+    color: abs.$secondary-color
+
+.products__gallery
+    @include abs.flex-center
+    gap: 2rem
+
+.products__item
+    @include abs.flex-center(column)
+    gap: 2rem
+    &-image
+        width: 300px
+        height: 300px
+    &-text
+        color: abs.$secondary-color

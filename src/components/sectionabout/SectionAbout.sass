@@ -1,0 +1,49 @@
+@use "../../styles/abstracts" as abs
+
+.about
+    @include abs.flex-center(row, space-between)
+    width: 100%
+    padding: 1rem
+    box-sizing: border-box
+    background-color: abs.$secondary-color
+    overflow: hidden
+
+.about__content
+    @include abs.flex-center(column)
+
+.about__subtitle, .about__title, .about__text
+    color: abs.$background-color
+
+.about__subtitle
+    margin: 0
+
+.about__item
+    @include abs.flex-center
+    position: relative
+    width: 300px
+    height: 600px
+
+.about__image
+    display: block
+    height: 400px
+    &--left
+        align-self: flex-end
+        transform: rotate(-15deg) translate(-50px, -50px)
+    &--right
+        align-self: flex-start
+        transform: rotate(15deg) translate(100px, 50px)
+
+.about__circle
+    position: absolute
+    &--left
+        @include abs.half-circle(300px, 150px, top)
+        top: 0
+        right: 0
+        background-color: abs.$background-color
+        transform: rotate(15deg) translate(-50px, 50px)
+    &--right
+        @include abs.half-circle(325px, 162.5px)
+        bottom: 0
+        left: 0
+        background-color: abs.$primary-color
+        transform: rotate(-20deg) translate(-70px)

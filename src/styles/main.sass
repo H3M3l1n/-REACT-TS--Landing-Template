@@ -1,4 +1,4 @@
-@use './_mixins' as mix
+@use './abstracts' as abs
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap')
 
 html, body, #root
@@ -6,16 +6,32 @@ html, body, #root
     width: 100vw
     margin: 0
     padding: 0
-    overflow: hidden
+    overflow-x: hidden
 
 #root
-    @include mix.flex-center(column)
-    background-color: #023A15
+    @include abs.flex-center(column, safe)
+    background-color: abs.$background-color
 
 h1
+    margin: 0
     font-family: "Poetsen One", sans-serif
     font-weight: 400
     font-style: normal
 
-a, button
-    @include mix.font-nunito
+p, a, button
+    @include abs.font-nunito
+    margin: 0
+    border: none
+    text-decoration: none
+
+a
+    color: inherit
+
+header, main, footer
+    width: 100%
+    max-width: 1440px
+
+ul, ol
+    margin: 0
+    padding: 0
+    list-style: none

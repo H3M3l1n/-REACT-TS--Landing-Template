@@ -1,12 +1,12 @@
-@use "../../styles/_mixins" as mix
+@use "../../styles/abstracts" as abs
 
-#hero
-    @include mix.flex-center(row, space-between)
+.hero
+    @include abs.flex-center(row, space-between)
     width: 100%
-    height: 100%
+    padding: 0 80px
+    box-sizing: border-box
 
 .hero__content
-    @include mix.flex-center(column)
     width: 60%
 
 .hero__title
@@ -14,28 +14,15 @@
     font-size: 6rem
     text-transform: uppercase
 
-.hero__button
-    width: 200px
-    height: 50px
-    align-self: flex-start
-    border: none
-    border-radius: 50px 50px
-    font-size: 1rem
-    text-transform: uppercase
-    cursor: pointer
-    &:hover
-        color: white
-        background-color: #576900
-
 .hero__gallery
-    @include mix.flex-center
-    gap: 25px
+    display: flex
+    gap: 3rem
 
 .hero__item
     height: 100%
     box-sizing: border-box
     &--right
-        margin-top: 250px
+        margin-top: 20%
 
 .hero__item-image
     display: block
@@ -50,9 +37,9 @@
         margin-right: 25px
 
 .hero__item-circle
-    width: 150px
-    height: 75px
-    background-color: #576900
-    border-radius: 0 0 10rem 10rem
+    background-color: abs.$primary-color
+    &--left
+        @include abs.half-circle(150px, 75px)
     &--right
+        @include abs.half-circle(200px, 100px)
         justify-self: end

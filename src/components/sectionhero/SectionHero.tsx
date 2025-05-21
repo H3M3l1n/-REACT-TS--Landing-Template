@@ -1,16 +1,17 @@
-import './sectionhero.sass';
+import './SectionHero.sass';
 import hero_apple_left from '../../assets/images/hero_apple-left.jpg';
 import hero_apple_right from '../../assets/images/hero_apple-right.jpg';
+import Button from '../button/Button';
 
 const SectionHero = () => {
   return (
-    <section id="hero" className="hero">
+    <section className="hero">
       <div className="hero__content">
         <h1 className="hero__title">
           The Crown
           <br /> of Apple Flavor
         </h1>
-        <button className="hero__button">Order Now</button>
+        <Button buttonText="Taste Now" />
       </div>
       <div className="hero__gallery">
         <div className=".hero__item hero__item--left">

@@ -1,0 +1,12 @@
+@use "../../styles/abstracts" as abs
+
+.navigation
+    @include abs.flex-center
+
+.navigation__list
+    display: flex
+
+.navigation__link
+    color: abs.$secondary-color
+    &:hover
+        color: abs.$primary-color

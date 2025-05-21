@@ -1,33 +1,8 @@
-@use "../../styles/_mixins" as mix
+@use "../../styles/abstracts" as abs
 
 .header
+    @include abs.section-narrow
     display: flex
     justify-content: space-between
-    width: 100%
-    padding: 0 5%
-    box-sizing: border-box
-
-.header__logo
-    width: 150px
-    height: 150px
-    box-sizing: border-box
-
-.header-nav
-    @include mix.flex-center
-
-.header-nav__list
-    display: flex
-    padding: 0
-    list-style: none
-
-.header-nav__item
-    margin-right: 5rem
-    &:last-child
-        margin-right: 0
-
-.header-nav__link
-    color: #FFF
-    text-decoration: none
-    font-size: 1.5rem
-    &:hover
-        color: #576900
+    height: 15%
+    position: relative

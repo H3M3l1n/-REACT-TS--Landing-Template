@@ -1,2 +1,32 @@
-#footer h1
-    color: red
+@use "../../styles/abstracts" as abs
+
+.footer
+    @include abs.flex-center(column)
+    @include abs.section-narrow
+    padding-top: 3rem
+    padding-bottom: 3rem
+
+.footer__content, .footer__bottom
+    @include abs.flex-center
+
+.footer__content, .footer__bottom
+    width: 100%
+
+.footer__image
+    flex: 1
+
+.footer__links
+    display: flex
+    justify-content: flex-end
+    flex: 1
+
+.footer__social
+    margin: 0 20%
+    &-item
+        margin-top: 1rem
+        &:first-child
+            margin-top: 0
+
+.footer__bottom
+    margin-top: 6rem
+    justify-content: space-between

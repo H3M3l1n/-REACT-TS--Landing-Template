@@ -1,0 +1,34 @@
+@use "../../styles/abstracts" as abs
+
+.signup
+    @include abs.flex-center(column)
+    height: 50vh
+    background-color: abs.$secondary-color
+
+.signup__title
+    color: abs.$background-color
+
+.signup__form
+    padding: 3px
+    border: 2px solid abs.$background-color
+    border-radius: 50px 50px
+
+.signup__input
+    border: none
+    @include abs.font-nunito
+    font-size: 1rem
+    margin: 0 1rem
+    &:focus
+        outline: none
+    &::placeholder
+        @include abs.font-nunito
+        font-size: 1rem
+        color: rgba(0, 0, 0, 0.25)
+
+.signup__button
+    background-color: abs.$background-color
+    color: abs.$secondary-color
+    &:hover
+        border: 2px solid abs.$background-color
+        background-color: abs.$secondary-color
+        color: abs.$background-color
