@@ -1,45 +1,57 @@
 @use "../../styles/abstracts" as abs
 
 .hero
-    @include abs.flex-center(row, space-between)
+    @include abs.section-narrow
+    padding-right: 0
+    position: relative
+    display: flex
+    gap: 40px
     width: 100%
-    padding: 0 80px
+    height: 75vh
     box-sizing: border-box
+    overflow: hidden
 
 .hero__content
-    width: 60%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    gap: 3rem
 
 .hero__title
-    color: white
-    font-size: 6rem
+    color: abs.$secondary-color
+    font-size: 5rem
     text-transform: uppercase
+
+.hero__subtitle
+    color: abs.$secondary-color
+    font-weight: 300
 
 .hero__gallery
     display: flex
-    gap: 3rem
+    gap: 40px
+    box-sizing: content-box
 
 .hero__item
-    height: 100%
-    box-sizing: border-box
+    position: relative
     &--right
-        margin-top: 20%
+        align-self: flex-end
 
 .hero__item-image
     display: block
-    width: 300px
+    width: 350px
     border-radius: 250px 250px 0 0
     object-fit: cover
     &--left
-        height: 450px
-        margin-left: 100px
+        height: 500px
     &--right
         height: 350px
-        margin-right: 25px
 
 .hero__item-circle
     background-color: abs.$primary-color
     &--left
-        @include abs.half-circle(150px, 75px)
-    &--right
         @include abs.half-circle(200px, 100px)
+        transform: translateX(-150px)
+    &--right
+        @include abs.half-circle(250px, 125px)
         justify-self: end
+        transform: translateX(50px)

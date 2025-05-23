@@ -3,29 +3,37 @@
 .signup
     @include abs.flex-center(column)
     height: 50vh
+    gap: 3rem
     background-color: abs.$secondary-color
 
 .signup__title
     color: abs.$background-color
 
 .signup__form
+    width: 100%
+    max-width: 700px
+    display: flex
     padding: 3px
     border: 2px solid abs.$background-color
     border-radius: 50px 50px
 
 .signup__input
-    border: none
     @include abs.font-nunito
-    font-size: 1rem
     margin: 0 1rem
+    flex: 1
+    border: none
+    font-size: 1rem
+    font-weight: 600
     &:focus
         outline: none
     &::placeholder
         @include abs.font-nunito
         font-size: 1rem
+        font-weight: 600
         color: rgba(0, 0, 0, 0.25)
 
 .signup__button
+    margin-left: auto
     background-color: abs.$background-color
     color: abs.$secondary-color
     &:hover

@@ -22,11 +22,25 @@
 
 .footer__social
     margin: 0 20%
+    &-title
+        font-size: abs.$font-size-text-small
+        color: abs.$secondary-color
     &-item
         margin-top: 1rem
-        &:first-child
-            margin-top: 0
+    &-link
+        display: flex
+        align-items: center
+        gap: .5rem
+        color: abs.$secondary-color
 
 .footer__bottom
     margin-top: 6rem
     justify-content: space-between
+    &-email
+        display: flex
+        align-items: center
+        gap: 1rem
+        color: abs.$secondary-color
+    &-copy
+        @include abs.font-nunito
+        color: abs.$secondary-color

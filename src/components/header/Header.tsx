@@ -1,5 +1,5 @@
 import Logo from '../logo/Logo';
-import Navigation from '../Navigation/Navigation';
+import Navigation from '../navigation/Navigation';
 import './Header.sass';
 
 const Header = () => {

@@ -4,7 +4,7 @@ import about_apple_right from '../../assets/images/about_apple-right.jpg';
 
 const SectionAbout = () => {
   return (
-    <section className="about">
+    <section id="about" className="about">
       <div className="about__item about__item--left">
         <img
           src={about_apple_left}
@@ -14,8 +14,8 @@ const SectionAbout = () => {
         <div className="about__circle about__circle--left"></div>
       </div>
       <div className="about__content">
-        <h3 className="about__subtitle">SUBTITLE</h3>
-        <h1 className="about__title">SECTION ABOUT</h1>
+        <h2 className="about__subtitle">SUBTITLE</h2>
+        <h1 className="about__title">Section About</h1>
         <p className="about__text">TEXT</p>
       </div>
       <div className="about__item about__item--right">

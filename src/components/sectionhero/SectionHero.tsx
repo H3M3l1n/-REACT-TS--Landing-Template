@@ -5,12 +5,10 @@ import Button from '../button/Button';
 
 const SectionHero = () => {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
       <div className="hero__content">
-        <h1 className="hero__title">
-          The Crown
-          <br /> of Apple Flavor
-        </h1>
+        <h1 className="hero__title">The Crown of Apple Flavor</h1>
+        <h2 className="hero__subtitle">Text</h2>
         <Button buttonText="Taste Now" />
       </div>
       <div className="hero__gallery">
