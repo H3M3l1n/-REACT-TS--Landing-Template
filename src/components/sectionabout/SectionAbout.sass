@@ -12,7 +12,10 @@
 
 .about__content
     @include abs.flex-center(column)
-    flex: 2
+    width: 40%
+    padding: 1rem
+    text-align: center
+    z-index: 99
 
 .about__subtitle, .about__title, .about__text
     color: abs.$background-color
@@ -20,10 +23,23 @@
 .about__subtitle
     @include abs.font-nunito
 
+.about__title-span
+    @include abs.span-highlight('../../assets/images/highlight_1.png', center, 100% 100%)
+
+.about__text
+    margin-top: 1rem
+
 .about__item
     @include abs.flex-center
     position: relative
-    height: 70%
+    width: 100%
+    height: 100%
+    max-height: 500px
+    max-width: 350px
+    &--left
+        margin-right: auto
+    &--right
+        margin-left: auto
 
 .about__image
     display: block

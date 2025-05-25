@@ -26,3 +26,10 @@
         border-radius: $height $height 0 0
     @else
         border-radius: 0 0 $height $height
+
+@mixin span-highlight($url, $position, $size)
+    display: inline-block
+    background-repeat: no-repeat
+    background-image: url($url)
+    background-position: $position
+    background-size: $size

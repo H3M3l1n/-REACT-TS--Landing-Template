@@ -16,15 +16,20 @@
     flex-direction: column
     justify-content: center
     gap: 3rem
+    z-index: 99
 
 .hero__title
     color: abs.$secondary-color
     font-size: 5rem
     text-transform: uppercase
+    &-span
+        &--first
+            @include abs.span-highlight('../../assets/images/highlight_1.png', center, 100% 100%)
+        &--second
+            @include abs.span-highlight('../../assets/images/highlight_2.png', bottom, contain)
 
 .hero__subtitle
     color: abs.$secondary-color
-    font-weight: 300
 
 .hero__gallery
     display: flex

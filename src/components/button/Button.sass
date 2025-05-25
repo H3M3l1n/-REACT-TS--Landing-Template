@@ -7,12 +7,7 @@
     width: 200px
     height: 50px
     border-radius: 50px 50px
-    background-color: abs.$secondary-color
-    color: abs.$background-color
     cursor: pointer
-    &:hover
-        color: abs.$secondary-color
-        background-color: abs.$primary-color
     &__text
         font-size: abs.$font-size-text-small
         font-weight: 800
@@ -20,3 +15,26 @@
     &__arrow
         margin-left: .5rem
         font-size: 2rem
+
+.button--light
+    background-color: abs.$secondary-color
+    color: abs.$background-color
+    &:hover
+        color: abs.$secondary-color
+        background-color: abs.$primary-color
+
+.button--dark
+    background-color: abs.$background-color
+    color: abs.$secondary-color
+    &:hover
+        border: 2px solid abs.$background-color
+        background-color: abs.$secondary-color
+        color: abs.$background-color
+
+.button--error
+    background-color: abs.$error-color
+    color: abs.$secondary-color
+    &:hover
+        border: 2px solid abs.$error-color
+        background-color: abs.$secondary-color
+        color: abs.$error-color

@@ -3,13 +3,25 @@ import hero_apple_left from '../../assets/images/hero_apple-left.jpg';
 import hero_apple_right from '../../assets/images/hero_apple-right.jpg';
 import Button from '../button/Button';
 
-const SectionHero = () => {
+import type { FunctionTypeVoid } from '../../types/general.types';
+
+interface HeroProps {
+  modalSwitch: FunctionTypeVoid;
+}
+
+const SectionHero = ({ modalSwitch }: HeroProps) => {
   return (
     <section id="hero" className="hero">
       <div className="hero__content">
-        <h1 className="hero__title">The Crown of Apple Flavor</h1>
-        <h2 className="hero__subtitle">Text</h2>
-        <Button buttonText="Taste Now" />
+        <h1 className="hero__title">
+          <span className="hero__title-span--first">The Crown</span> of Apple{' '}
+          <span className="hero__title-span--second">Flavor</span>
+        </h1>
+        <h2 className="hero__subtitle">
+          Discover the crisp, royal taste of nature’s finest apples — grown with
+          care, crowned with flavor.
+        </h2>
+        <Button buttonText="Taste Now" onClick={modalSwitch} theme="light" />
       </div>
       <div className="hero__gallery">
         <div className=".hero__item hero__item--left">

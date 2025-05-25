@@ -4,11 +4,11 @@ import './Navigation.sass';
 
 interface NavigationType {
   flexDirection?: React.CSSProperties['flexDirection'];
-  fontSize: React.CSSProperties['fontSize'];
-  gap: React.CSSProperties['gap'];
+  fontSize?: React.CSSProperties['fontSize'];
+  gap?: React.CSSProperties['gap'];
 }
 
-const Navigation = ({ flexDirection, gap }: NavigationType) => {
+const Navigation = ({ flexDirection, fontSize, gap }: NavigationType) => {
   return (
     <nav className="navigation">
       <ul
@@ -17,7 +17,11 @@ const Navigation = ({ flexDirection, gap }: NavigationType) => {
       >
         {links.map((item) => (
           <li key={item.id} className="navigation__item">
-            <a href={item.url} className="navigation__link">
+            <a
+              href={item.url}
+              className="navigation__link"
+              style={{ fontSize: fontSize }}
+            >
               {item.name}
             </a>
           </li>

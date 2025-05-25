@@ -1,0 +1,27 @@
+@use "../../styles/abstracts" as abs
+
+.inputText__wrapper
+    width: 100%
+    max-width: 640px
+    display: flex
+    padding: 3px
+    border-radius: 50px 50px
+    &-normal
+        border: 2px solid abs.$background-color
+    &-error
+        border: 2px solid abs.$error-color
+
+.inputText__input
+    @include abs.font-nunito
+    margin: 0 1rem
+    flex: 1
+    border: none
+    font-size: abs.$font-size-text-medium
+    font-weight: 600
+    &:focus
+        outline: none
+    &::placeholder
+        @include abs.font-nunito
+        font-size: abs.$font-size-text-medium
+        font-weight: 600
+        color: rgba(0, 0, 0, 0.25)
