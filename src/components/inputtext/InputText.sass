@@ -2,6 +2,7 @@
 
 .inputText__wrapper
     width: 100%
+    min-width: 250px
     max-width: 640px
     display: flex
     padding: 3px
@@ -16,12 +17,12 @@
     margin: 0 1rem
     flex: 1
     border: none
-    font-size: abs.$font-size-text-medium
+    font-size: abs.$font-size-text-medium-desktop
     font-weight: 600
     &:focus
         outline: none
     &::placeholder
         @include abs.font-nunito
-        font-size: abs.$font-size-text-medium
+        font-size: abs.$font-size-text-medium-desktop
         font-weight: 600
         color: rgba(0, 0, 0, 0.25)

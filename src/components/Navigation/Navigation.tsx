@@ -3,14 +3,20 @@ import { links } from '../../data/linkData';
 import './Navigation.sass';
 
 interface NavigationType {
+  className?: string;
   flexDirection?: React.CSSProperties['flexDirection'];
   fontSize?: React.CSSProperties['fontSize'];
   gap?: React.CSSProperties['gap'];
 }
 
-const Navigation = ({ flexDirection, fontSize, gap }: NavigationType) => {
+const Navigation = ({
+  className,
+  flexDirection,
+  fontSize,
+  gap,
+}: NavigationType) => {
   return (
-    <nav className="navigation">
+    <nav className={`navigation ${className}`}>
       <ul
         className="navigation__list"
         style={{ flexDirection: flexDirection, gap: gap }}

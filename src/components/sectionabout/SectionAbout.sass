@@ -4,7 +4,7 @@
     @include abs.flex-center(row)
     position: relative
     width: 100%
-    height: 80vh
+    height: 75vh
     box-sizing: border-box
     background-color: abs.$secondary-color
     overflow: hidden
@@ -12,7 +12,8 @@
 
 .about__content
     @include abs.flex-center(column)
-    width: 40%
+    width: 50%
+    height: 100%
     padding: 1rem
     text-align: center
     z-index: 99
@@ -30,22 +31,20 @@
     margin-top: 1rem
 
 .about__item
-    @include abs.flex-center
+    @include abs.flex-center(column)
     position: relative
-    width: 100%
+    width: 25%
     height: 100%
-    max-height: 500px
-    max-width: 350px
     &--left
+        flex-direction: column-reverse
         margin-right: auto
     &--right
         margin-left: auto
 
 .about__image
     display: block
-    width: 350px
-    height: 350px
-    flex: 1
+    width: 100%
+    aspect-ratio: 1 / 1
     object-fit: cover
     &--left
         align-self: flex-end
@@ -57,16 +56,39 @@
         transform-origin: bottom right
 
 .about__circle
-    position: absolute
     &--left
-        @include abs.half-circle(300px, 150px, top)
-        top: -10px
-        right: -50px
         background-color: abs.$background-color
-        transform: rotate(10deg)
+        transform: rotate(10deg) translate(5vw, -2.5vw)
+        @include abs.half-circle(13vw, top)
     &--right
-        @include abs.half-circle(325px, 162.5px)
-        bottom: -5px
-        left: -150px
         background-color: abs.$primary-color
-        transform: rotate(-10deg)
+        transform: rotate(-10deg) translateX(-3vw)
+        @include abs.half-circle(15vw)
+
+@media (max-width: 767px)
+    .about
+        flex-wrap: wrap
+
+    .about__content
+        width: 100%
+        height: 50%
+        padding-top: 0
+        padding-bottom: 0
+        order: 1
+
+    .about__item
+        padding: 0 1rem 1rem 1rem
+        box-sizing: border-box
+        width: 50%
+        height: 50%
+        &--left
+            order: 2
+        &--right
+            order: 3
+
+    .about__image
+        height: 100%
+        transform: rotate(0)
+
+    .about__circle
+        display: none

@@ -24,7 +24,7 @@ const SectionHero = ({ modalSwitch }: HeroProps) => {
         <Button buttonText="Taste Now" onClick={modalSwitch} theme="light" />
       </div>
       <div className="hero__gallery">
-        <div className=".hero__item hero__item--left">
+        <div className="hero__item hero__item--left">
           <img
             src={hero_apple_left}
             alt="apple with a green leaf"
@@ -32,7 +32,7 @@ const SectionHero = ({ modalSwitch }: HeroProps) => {
           />
           <div className="hero__item-circle hero__item-circle--left"></div>
         </div>
-        <div className=".hero__item hero__item--right">
+        <div className="hero__item hero__item--right">
           <img
             src={hero_apple_right}
             alt="apple with a green leaf"

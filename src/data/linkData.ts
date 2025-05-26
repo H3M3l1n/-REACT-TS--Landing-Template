@@ -69,7 +69,3 @@ export const social: Social[] = [
     Icon: FaXTwitter,
   },
 ];
-
-// Footer bottom info
-export const email: string = 'example@example.com';
-export const copy: string = '2025 Royal Apple all rights reserved';

@@ -1,12 +1,47 @@
 @use "../../styles/abstracts" as abs
 
 .header
-    @include abs.section-narrow
     display: flex
-    justify-content: space-between
-    height: 15%
+    align-items: center
+    height: 15vh
     position: relative
+    @include abs.section-narrow
 
-@media (max-width: 768px)
-    .element
-        font-size: 16px
+.header__logo
+    margin-right: auto
+
+.header__navigation
+    margin-right: 1rem
+    ul
+        gap: clamp(1rem, 5vw, 5rem)
+        li
+            a
+                font-size: abs.$font-size-text-medium-desktop
+
+.header__button
+    display: none
+
+@media (max-width: 767px)
+    .header__navigation
+        display: none
+
+    .header__navigation--open
+        display: block
+        height: 100%
+        ul
+            flex-direction: column
+            gap: .5rem
+
+    .header__button
+        display: flex
+        justify-content: center
+        align-items: center
+        justify-self: flex-end
+        width: 3rem
+        aspect-ratio: 1 / 1
+        padding: 0
+        background: none
+        cursor: pointer
+        color: abs.$secondary-color
+        &:hover
+            color: abs.$primary-color

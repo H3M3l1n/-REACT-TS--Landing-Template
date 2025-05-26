@@ -1,7 +1,7 @@
 import { IconContext } from 'react-icons';
 import { FaRegEnvelope } from 'react-icons/fa';
 
-import { email, copy, social } from '../../data/linkData';
+import { social } from '../../data/linkData';
 
 import Logo from '../logo/Logo';
 import Navigation from '../navigation/Navigation';
@@ -16,11 +16,7 @@ const Footer = () => {
             <Logo />
           </div>
           <div className="footer__links">
-            <Navigation
-              flexDirection={'column'}
-              fontSize={'1rem'}
-              gap={'1rem'}
-            />
+            <Navigation flexDirection={'column'} gap={'1rem'} />
             <div className="footer__social">
               <h2 className="footer__social-title">Social Media</h2>
               <ul className="footer__social-list">
@@ -42,11 +38,13 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__bottom">
-          <a href={`mailto:${email}`} className="footer__bottom-email">
+          <a href="mailto:example@example.com" className="footer__bottom-email">
             <FaRegEnvelope />
-            {email}
+            example@example.com
           </a>
-          <span className="footer__bottom-copy">{copy}</span>
+          <span className="footer__bottom-copy">
+            2025 Royal Apple all rights reserved.
+          </span>
         </div>
       </footer>
     </IconContext.Provider>

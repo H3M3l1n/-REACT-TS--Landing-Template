@@ -18,14 +18,21 @@
 @mixin section-narrow($paddingY: 80px)
     padding: 0 $paddingY
     box-sizing: border-box
+    @media (max-width: 1023px)
+        padding: 0 (calc($paddingY / 2))
+    @media (max-width: 539px)
+        padding: 0 (calc($paddingY / 4))
 
-@mixin half-circle($width, $height, $direction: bottom)
+@mixin half-circle($width, $direction: bottom)
+    $radius: calc($width / 2)
     width: $width
-    height: $height
+    height: $radius
     @if $direction == top
-        border-radius: $height $height 0 0
+        border-radius: $radius $radius 0 0
+    @else if $direction == bottom
+        border-radius: 0 0 $radius $radius
     @else
-        border-radius: 0 0 $height $height
+        @warn "Unsupported direction `#{$direction}` in half-circle mixin."
 
 @mixin span-highlight($url, $position, $size)
     display: inline-block

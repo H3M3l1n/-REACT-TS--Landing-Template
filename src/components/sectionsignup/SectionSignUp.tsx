@@ -38,8 +38,10 @@ const SectionSignUp = () => {
         </h1>
       </div>
       <InputText
+        className="signup__input"
         error={emailError}
         inputRef={emailRef}
+        inputName="input_signup"
         onChange={() => setEmailError(false)}
         placeholder="Email address"
         type="email"

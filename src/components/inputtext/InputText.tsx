@@ -8,6 +8,7 @@ interface InputTextProps {
   children?: React.ReactNode;
   className?: string;
   error: boolean;
+  inputName: string;
   inputRef: RefObject<HTMLInputElement | null>;
   maxLength?: number;
   onChange: FunctionTypeVoid;
@@ -19,6 +20,7 @@ const InputText = ({
   children,
   className,
   error,
+  inputName,
   inputRef,
   maxLength = 30,
   onChange,
@@ -32,6 +34,7 @@ const InputText = ({
       } ${className}`}
     >
       <input
+        name={inputName}
         className="inputText__input"
         maxLength={maxLength}
         onChange={onChange}

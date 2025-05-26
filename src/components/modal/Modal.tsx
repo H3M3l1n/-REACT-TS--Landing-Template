@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { FaXmark } from 'react-icons/fa6';
+import { FocusTrap } from 'focus-trap-react';
 
 import InputText from '../inputtext/InputText';
 import Button from '../button/Button';
@@ -43,7 +44,7 @@ const Modal = ({ modalSwitch }: ModalProps) => {
       type: 'email',
       placeholder: 'Email',
       ref: emailRef,
-      regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
     },
   ];
 
@@ -83,51 +84,54 @@ const Modal = ({ modalSwitch }: ModalProps) => {
   };
 
   return (
-    <div className="modal">
-      <div className="modal__overlay" onClick={modalSwitch}></div>
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal__title"
-        aria-describedby="modal__description"
-        className="modal__content"
-      >
-        <button className="modal__close" onClick={modalSwitch}>
-          <FaXmark />
-        </button>
-        <div className="modal__form">
-          <h1 id="modal__title" className="modal__title">
-            Let’s Work Together
-          </h1>
-          <p id="modal__description" className="modal__description">
-            Leave your contact details —<br /> we’ll get back to you shortly.
-          </p>
-          {inputs.map((item) => (
-            <InputText
-              key={item.id}
-              error={error[item.name]}
-              inputRef={item.ref}
-              placeholder={item.placeholder}
-              type={item.type}
-              maxLength={item.maxLength}
-              onChange={() => handleChange(item.name)}
+    <FocusTrap>
+      <div className="modal">
+        <div className="modal__overlay" onClick={modalSwitch}></div>
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal__title"
+          aria-describedby="modal__description"
+          className="modal__content"
+        >
+          <button className="modal__close" onClick={modalSwitch}>
+            <FaXmark />
+          </button>
+          <div className="modal__form">
+            <h1 id="modal__title" className="modal__title">
+              Let’s Work Together
+            </h1>
+            <p id="modal__description" className="modal__description">
+              Leave your contact details —<br /> we’ll get back to you shortly.
+            </p>
+            {inputs.map((item) => (
+              <InputText
+                key={item.id}
+                error={error[item.name]}
+                inputName={`modal_${item.name}`}
+                inputRef={item.ref}
+                placeholder={item.placeholder}
+                type={item.type}
+                maxLength={item.maxLength}
+                onChange={() => handleChange(item.name)}
+              />
+            ))}
+            <Button
+              buttonText="Send"
+              className="modal__input-button"
+              error={error.name || error.phone || error.email}
+              onClick={handleSendForm}
+              theme="dark"
             />
-          ))}
-          <Button
-            buttonText="Send"
-            className="modal__input-button"
-            error={error.name || error.phone || error.email}
-            onClick={handleSendForm}
-            theme="dark"
+          </div>
+          <img
+            src={modal_apple}
+            className="modal__image"
+            alt="apples in crates"
           />
         </div>
-        <img
-          src={modal_apple}
-          className="modal__image"
-          alt="apples in crates"
-        />
       </div>
-    </div>
+    </FocusTrap>
   );
 };
 
